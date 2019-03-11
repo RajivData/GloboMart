@@ -1,6 +1,16 @@
 # GloboMart
 
 <h2><b>1.ProductCatalog</b></h2>
+
+<p>- Add product details</p>
+<pre>	POST-http://localhost:8080/product-catalog/product
+		Request Body
+		{
+		"productName": "Puma full sleeve shirt",
+		"productType": "TSHIRT"
+		}
+</pre>
+
 <p>- Get Product details by id </p>
 <pre>	GET -http://localhost:8080/product-catalog/product/4
 		{
@@ -22,16 +32,17 @@
 		"productName": "Puma full sleeve shirt",
 		"productType": "TSHIRT"
 		}
-		]</pre>
-
-<p>- Add product details</p>
-<pre>	POST-http://localhost:8080/product-catalog/product
-		Request Body
-		{
-		"productName": "Puma full sleeve shirt",
-		"productType": "TSHIRT"
-		}
+		]
 </pre>
+
+<p>- Delete product details</p>
+<pre>	DELETE-http://localhost:8080/product-catalog/productDelete/1
+		
+		Product Deleted
+</pre>
+
+
+
 <h2><b>Pricedetails</b></h2>
 <p>- Add product price</p>
 <pre>	POST - http://localhost:8181/price-details/price
