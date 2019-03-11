@@ -15,8 +15,8 @@ import com.globomart.productcat.app.model.ProductType;
 public class ProductCatalogService {
 
 	@Autowired
-	private ProductCatalogDao catalogDao ;
-	
+	private ProductCatalogDao catalogDao;
+
 	public void addProduct(Product product) {
 		catalogDao.addProduct(product);
 	}
@@ -26,14 +26,18 @@ public class ProductCatalogService {
 	}
 
 	public List<Product> getProductByType(ProductType productType) {
-		 List<Product> products=new ArrayList<>();
-		 Iterator<Product> productItr=catalogDao.getAllProduct().iterator();
-		 while(productItr.hasNext()) {
-			 Product product=productItr.next();
-			 if(product.getProductType()==productType) {
-				 products.add(product);
-			 }
-		 }
-		 return products;
+		List<Product> products = new ArrayList<>();
+		Iterator<Product> productItr = catalogDao.getAllProduct().iterator();
+		while (productItr.hasNext()) {
+			Product product = productItr.next();
+			if (product.getProductType() == productType) {
+				products.add(product);
+			}
+		}
+		return products;
+	}
+
+	public void productDelete(Integer productId) {
+		catalogDao.productDelete(productId);
 	}
 }

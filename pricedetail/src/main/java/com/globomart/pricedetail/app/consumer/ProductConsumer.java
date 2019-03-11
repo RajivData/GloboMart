@@ -2,8 +2,6 @@ package com.globomart.pricedetail.app.consumer;
 
 import java.util.Arrays;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -14,14 +12,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.globomart.pricedetail.app.model.Product;
 
-
-
 @Component
 public class ProductConsumer {
-//	Logger logger = LoggerFactory.getLogger(ProductConsumer.class);
-
-	/*@Value("${book.consumer.endpoint}")
-	private String productConsumerEndpoint;*/
 
 	public Product getProductById(int productId) {
 		final String url = "http://localhost:8080/product-catalog/product/{productid}";

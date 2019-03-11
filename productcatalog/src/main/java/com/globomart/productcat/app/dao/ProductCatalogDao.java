@@ -11,7 +11,7 @@ public class ProductCatalogDao {
 
 	@Autowired
 	private ProductRepository productRepository;
-	
+
 	public void addProduct(Product product) {
 		productRepository.save(product);
 	}
@@ -19,8 +19,12 @@ public class ProductCatalogDao {
 	public Product getProductById(Integer productid) {
 		return productRepository.findById(productid).get();
 	}
-	
+
 	public Iterable<Product> getAllProduct() {
 		return productRepository.findAll();
+	}
+
+	public void productDelete(Integer productId) {
+		productRepository.delete(productRepository.findById(productId).get());
 	}
 }
